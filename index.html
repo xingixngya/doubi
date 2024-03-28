@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>抖币获取</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        /* overflow: hidden; */
+      }
+      img {
+        width: 100%;
+      }
+      /* 首页面 */
+      .container {
+        width: 100%;
+        position: relative;
+      }
+      .box-one {
+        width: 100%;
+        position: relative;
+      }
+      .bottom-one {
+        position: absolute;
+        bottom: 4%;
+        right: 2%;
+        width: 134px;
+        height: 42px;
+        /* background-color: rgba(0,0,0,0.5); */
+      }
+      /* 购买页面 */
+      .box-two {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 0%;
+      }
+      .sll {
+        height: 65px;
+        width: 100px;
+        position: absolute;
+        top: 28%;
+        left: 31%;
+        transform: translateX(-50%);
+        /* background-color: #f3f3f3; */
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      .sll .sll-one {
+        color: #ff3b51;
+        font-size: 19px;
+        font-weight: 500;
+      }
+      .sll .sll-two {
+        color: #8a8c93;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .sel {
+        height: 65px;
+        width: 90%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: #f3f3f3; */
+        box-sizing: border-box;
+      }
+      .sel-one {
+        line-height: 33px;
+        margin-bottom: 10px;
+        height: 33px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f3f3f3;
+        border-radius: 3px;
+        font-size: 12px;
+        padding: 0px 10px;
+      }
+      .active {
+        background-color: #fff5f6;
+        border: 1px solid #ff9aa6;
+        color: #ff3149;
+      }
+      .input {
+        height: 33px;
+        width: 90%;
+        position: absolute;
+        top: 56%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .input input[type="text"] {
+        border-radius: 3px;
+        font-size: 17px;
+        text-indent: 10px;
+        width: 95%;
+        height: 33px;
+        background-color: #f3f3f3;
+        outline: none;
+        border: none;
+      }
+
+      .bottom-two {
+        width: 100%;
+        height: 44px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        position: absolute;
+        bottom: 36px;
+      }
+
+      /* 确认订单 */
+      .box-three {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+      .bottom-three {
+        width: 121px;
+        height: 49px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        position: absolute;
+        bottom: 5%;
+        left: 70%;
+      }
+      .bottom-three-one {
+        width: 121px;
+        height: 49px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        position: absolute;
+        bottom: 5%;
+        left: 70%;
+      }
+
+      .video {
+        display: none;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .video-one {
+        display: none;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      video {
+        width: 150px;
+        height: 150px;
+      }
+      .video-one {
+        width: 150px;
+        height: 150px;
+      }
+      /* 支付成功 */
+      .box-four {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+      .bottom-four {
+        width: 69px;
+        height: 49px;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        position: absolute;
+        top: 7%;
+        left: -5px;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .bottom-three {
+        z-index: 9999; /* 设置一个较大的 z-index 值 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box-one">
+        <img src="./img/首页.png" />
+        <div class="bottom-one"></div>
+      </div>
+      <div class="box-two">
+        <img src="./img/购买1.jpg" alt="" />
+
+        <div class="sll">
+          <div class="sll-one">￥1000</div>
+          <div class="sll-two">已选择1万砖石</div>
+        </div>
+        <!-- 选项 -->
+        <div class="sel">
+          <div class="sel-one active">
+            <div class="left">1万砖石</div>
+            <div class="right">￥1000</div>
+          </div>
+          <div class="sel-one">
+            <div class="left">2万砖石</div>
+            <div class="right">￥2360</div>
+          </div>
+        </div>
+        <!-- 选项 -->
+
+        <div class="input">
+          <input type="text" placeholder="" />
+        </div>
+        <div class="bottom-two"></div>
+      </div>
+      <!-- 页面1 -->
+      <div style="display: none" class="box-three order1-img">
+        <img src="./img/订单1.png" alt="" />
+        <div class="bottom-three"></div>
+        <div class="video">
+          <img src="./rh86d-ejt7y.gif" alt="" />
+        </div>
+      </div>
+      <!-- 页面1 -->
+      <!-- 页面2 -->
+      <div style="display: none" class="box-three order2-img">
+        <img src="./img/订单2.jpg" alt="" />
+        <div class="bottom-three-one"></div>
+        <div class="video-one">
+          <img src="./rh86d-ejt7y.gif" alt="" />
+        </div>
+      </div>
+      <!-- 页面2 -->
+
+      <div class="box-four">
+        <img src="./img/支付成功.jpg" alt="" />
+        <div class="bottom-four">
+          <a href="javascript:location.reload()"></a>
+        </div>
+      </div>
+    </div>
+    <script>
+      const three = document.querySelector(".box-three");
+      document.querySelector(".bottom-one").addEventListener("click", () => {
+        document.querySelector(".box-two").style.display = "block";
+      });
+      document.querySelector(".bottom-two").addEventListener("click", () => {
+        three.style.display = "block";
+      });
+      document.querySelector(".bottom-three").addEventListener("click", () => {
+        const videoPlayer = document.querySelector(".video");
+        videoPlayer.style.display = "block";
+        setTimeout(() => {
+          videoPlayer.currentTime = 0; // 重置视频播放位置为0
+          document.querySelector(".video").style.display = "none";
+          document.querySelector(".box-four").style.display = "block";
+        }, 2000);
+      });
+
+      document
+        .querySelector(".bottom-three-one")
+        .addEventListener("click", () => {
+          const videoP = document.querySelector(".video-one");
+          videoP.style.display = "block";
+          setTimeout(() => {
+            videoP.currentTime = 0; // 重置视频播放位置为0
+            document.querySelector(".video-one").style.display = "none";
+            document.querySelector(".box-four").style.display = "block";
+          }, 2000);
+        });
+
+      // tab点击切换
+      // 点击之后下方按钮切换
+      // tab点击切换
+      // 点击之后下方按钮切换
+      const selItems = document.querySelectorAll(".sel-one");
+      const sllOne = document.querySelector(".sll-one");
+      const sllTwo = document.querySelector(".sll-two");
+
+      selItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          selItems.forEach((item) => item.classList.remove("active")); // 先移除所有元素的active类名
+          item.classList.add("active"); // 添加active类名到当前点击的元素
+
+          // 获取点击的选项中的砖石数量和价格
+          const selectedDiamonds = item.querySelector(".left").textContent;
+          const selectedPrice = item.querySelector(".right").textContent;
+
+          // 更新sll元素的内容
+          sllOne.textContent = selectedPrice;
+          sllTwo.textContent = `已选择${selectedDiamonds}`;
+        });
+      });
+
+      document.querySelector(".bottom-two").addEventListener("click", () => {
+        const activeSel = document.querySelector(".sel-one.active");
+        if (activeSel) {
+          const index = Array.from(activeSel.parentElement.children).indexOf(
+            activeSel
+          ); // 获取当前active元素的索引
+          const order1Img = document.querySelector(".order1-img");
+          const order2Img = document.querySelector(".order2-img");
+          const video = document.querySelector(".video");
+
+          if (index === 0) {
+            order1Img.style.display = "block";
+            order2Img.style.display = "none";
+            // video.style.display = "block"; // 显示 bottom-three
+          } else {
+            order1Img.style.display = "none";
+            order2Img.style.display = "block";
+            video.style.display = "block"; // 显示 bottom-three
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
